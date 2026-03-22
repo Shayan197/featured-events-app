@@ -1,16 +1,8 @@
-# Next.js Enterprise Boilerplate
+# Eventify — Modern Event Discovery Platform
 
-Modern, scalable and production-ready **Next.js 16 boilerplate** built with:
+A modern, scalable and performance-focused **Next.js application** built as part of a real-world case study.
 
-- TypeScript
-- Tailwind CSS v4 (Design Token Architecture)
-- Redux Toolkit
-- next-themes
-- Lenis Smooth Scroll
-- Husky + Commitlint
-- ESLint + Prettier (Strict Rules)
-- Docker + Docker Compose
-- CI/CD GitHub Workflows
+Eventify is designed to help users **discover, explore, and engage with events seamlessly** — powered by clean architecture, reusable components, and a design-token-based UI system.
 
 ---
 
@@ -20,28 +12,36 @@ Modern, scalable and production-ready **Next.js 16 boilerplate** built with:
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Tech Stack & Libraries](#tech-stack--libraries)
+- [Best Practices Used](#best-practices-used)
 - [How It Works](#how-it-works)
-- [Docker Setup](#docker-setup)
-- [Linting & Code Quality](#linting--code-quality)
-- [CI/CD Workflows](#cicd-workflows)
-- [Environment Variables](#environment-variables)
+- [Performance Optimization](#performance-optimization)
+- [Theme System](#theme-system)
+- [Common Issues](#common-issues)
 - [Screenshots](#screenshots)
 
 ---
 
 ## Introduction
 
-This boilerplate is designed for scalable frontend applications using modern architecture and enterprise-level best practices.
+Eventify is not just a UI project — it’s a **case-study driven frontend application** built to demonstrate:
 
-It includes:
+- Real-world frontend architecture
+- Scalable component design
+- Performance-first development
+- Clean and maintainable code practices
 
-- Design Token based Tailwind system
-- Dark / Light theme support
-- Strict ESLint rules
-- Pre-configured Redux Toolkit
-- Production-ready folder structure
-- Dockerized environment
-- GitHub CI/CD automation
+### Problem
+
+Users often struggle to find relevant events quickly with a smooth and engaging experience.
+
+### Solution
+
+Eventify solves this by providing:
+
+- Clean UI hierarchy
+- Structured event presentation
+- Fast loading experience
+- Modern frontend architecture
 
 ---
 
@@ -53,7 +53,9 @@ It includes:
 npm install
 ```
 
-### 2️⃣ Run Dev Server
+---
+
+### 2️⃣ Run Development Server
 
 ```bash
 npm run dev
@@ -67,57 +69,67 @@ http://localhost:3000
 
 ---
 
+## CRLF Error Fix (Important)
+
+If you face **CRLF / LF warning**, run:
+
+```bash
+git config --global core.autocrlf true
+```
+
+OR (recommended):
+
+```bash
+git config --global core.autocrlf input
+```
+
+---
+
 ## Project Structure
 
 ```
-.github/              //GitHub configuration (CI/CD automation & workflows)
- └── workflows/       //GitHub Actions pipelines
-     ├── ci.yml       //Continuous Integration (lint, build, checks)
-     ├── deploy.yml   //Deployment workflow (auto deploy setup)
-     ├── release.yml  //Automated versioning & release pipeline
-
-Docker/               //Containerization setup for development & production
- ├── Dockerfile       //Production-ready container configuration
- ├── docker-compose.yml //Multi-container orchestration setup
- ├── .dockerignore    //Files excluded from Docker build context
-
-src/                  //Main application source code
- ├── app/             //Next.js App Router (layouts, pages, providers)
- ├── assets/          //Static assets (png, svg, webp, icons)
- ├── components/      //Feature-based scalable component architecture
- ├── hooks/           //Reusable custom React hooks
- ├── store/           //Redux Toolkit store setup (RTK Query recommended for auth)
- ├── types/           //Global TypeScript types & interfaces
- ├── utils/           //Utility functions & helper modules
-
-commitlint.config.js  //Conventional commit rules configuration
-css.d.ts              //Global CSS module type declarations
-eslint.config.mjs     //ESLint configuration (strict enterprise rules)
-prettier.config.js    //Prettier code formatting configuration
-
-### Folder Structure Preview
-
-![Folder Structure](./docs/images/folder-structure.png)
-
+src/
+ ├── app/           → Next.js App Router (pages, layouts)
+ ├── components/    → Reusable UI components
+ ├── assets/        → Images (WebP optimized)
+ ├── types/         → TypeScript types
+ ├── data/          → Static event data
+ ├── hooks/         → Custom hooks
+ ├── utils/         → Helper functions
 ```
 
 ---
 
 ## Tech Stack & Libraries
 
-| Technology      | Purpose                 |
-| --------------- | ----------------------- |
-| Next.js 16      | App Router architecture |
-| TypeScript      | Type safety             |
-| Tailwind CSS v4 | Utility-first styling   |
-| Redux Toolkit   | State management        |
-| next-themes     | Theme management        |
-| Lenis           | Smooth scrolling        |
-| Husky           | Git hooks               |
-| Commitlint      | Conventional commits    |
-| ESLint          | Code linting            |
-| Prettier        | Code formatting         |
-| Docker          | Containerization        |
+| Technology      | Purpose               |
+| --------------- | --------------------- |
+| Next.js 16      | App Router & SSR/SSG  |
+| React.js        | UI Development        |
+| TypeScript      | Type Safety           |
+| Tailwind CSS v4 | Utility-first styling |
+| Design Tokens   | Scalable UI system    |
+| next-themes     | Light/Dark mode       |
+| Framer Motion   | Animations            |
+| Redux Toolkit   | State management      |
+| ESLint          | Code linting          |
+| Prettier        | Code formatting       |
+| Husky           | Git hooks             |
+| Commitlint      | Conventional commits  |
+
+---
+
+## Best Practices Used
+
+- Design Token Architecture (CSS variables + Tailwind mapping)
+- Reusable & scalable component structure
+- Clean folder architecture (feature-based)
+- Performance-first UI design
+- Optimized image handling using `next/image`
+- Semantic naming conventions
+- Dark/Light theme separation
+- Minimal re-renders & clean state handling
+- Production-ready code structure
 
 ---
 
@@ -125,7 +137,7 @@ prettier.config.js    //Prettier code formatting configuration
 
 ### Design Tokens
 
-Global CSS uses semantic design tokens:
+Global styling is handled via semantic tokens:
 
 ```css
 --color-background
@@ -133,7 +145,7 @@ Global CSS uses semantic design tokens:
 --text-heading-lg
 ```
 
-Tailwind maps these via:
+Mapped inside Tailwind:
 
 ```css
 @theme inline;
@@ -147,130 +159,98 @@ Usage:
 
 ---
 
-### Theme Switching
+## Performance Optimization
 
-Using `next-themes` with:
+- Optimized images using `next/image`
+- WebP format for fast loading
+- Lazy loading enabled by default
+- Proper image sizing using `fill` + container control
+- Minimal DOM re-renders
+- Efficient Tailwind usage (no inline heavy styles)
+
+---
+
+## Theme System
+
+Implemented using **next-themes**:
 
 ```tsx
 <ThemeProvider attribute="data-theme">
 ```
 
-Theme is controlled via:
+Theme controlled via:
 
 ```
-data-theme="dark"
 data-theme="light"
+data-theme="dark"
+```
+
+### Features:
+
+- Dynamic theme switching
+- Token-based color system
+- Clean separation of light/dark styles
+
+---
+
+## Common Issues
+
+### Image not visible with `fill`
+
+✔ Fix:
+
+- Parent must have:
+
+```css
+relative + fixed height
+```
+
+Example:
+
+```tsx
+<div className="relative h-60">
+    <Image fill />
+</div>
 ```
 
 ---
 
-### State Management
+### Tailwind token not working
 
-Redux Toolkit setup in:
+✔ Ensure:
 
-```
-src/store/
-```
-
-Includes:
-
-- Typed hooks
-- Central store config
-- Slice architecture
+- Token added in `@theme inline`
+- Class name matches exactly
 
 ---
 
-## Docker Setup
+## 📸 Screenshots
 
-### Build & Run
-
-```bash
-docker-compose up --build
-```
-
-Production-ready container defined in:
-
-```
-Docker/Dockerfile
-```
+(Add your screenshots here)
 
 ---
 
-## Linting & Code Quality
+## Support
 
-Run lint:
+If this project helped you or you learned something new:
 
-```bash
-npm run lint
-```
-
-Pre-commit hooks:
-
-- ESLint
-- Prettier
-- Commitlint
-
-Conventional commit example:
-
-```
-feat: add new button component
-fix: resolve theme hydration issue
-```
-
----
-
-## CI/CD Workflows
-
-Located in:
-
-```
-.github/workflows/
-```
-
-Includes:
-
-- ci.yml → Lint + Build check
-- deploy.yml → Deployment pipeline
-- release.yml → Version tagging
-
----
-
-## Environment Variables
-
-Copy:
-
-```
-.env.example
-```
-
-to:
-
-```
-.env
-```
-
-Add your environment-specific configs.
-
----
-
-## Screenshots
-
-![Assets](./docs/images/assets.png)
-![Components](./docs/images/components.png)
-
-### App Preview
-
-![App Preview](./docs/images/folder-structure.png)
+**If you like this project, feel free to star the repository!**
 
 ---
 
 ## Author
 
-Muhammad Shayan Bukhari  
-Frontend Developer
+**Muhammad Shayan Bukhari**
+Frontend Developer — React | Next.js | TypeScript
 
 ---
 
 ## License
 
-MIT
+MIT License
+
+---
+
+## © Copyright
+
+© 2026 — All Rights Reserved by Shayan Bukhari

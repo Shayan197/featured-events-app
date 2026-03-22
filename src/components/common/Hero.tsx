@@ -19,12 +19,14 @@ export const Hero = (): React.JSX.Element => {
                 transition={{ delay: 0.2 }}
                 className="mt-4 text-foreground-secondary max-w-2xl"
             >
-                A responsive and dynamic event discovery platform built as part of a real-world case
-                study to demonstrate modern frontend engineering practices.
+                Built as part of a real-world case study, this platform demonstrates how modern
+                frontend engineering can transform simple ideas into en gaging, scalable, and
+                user-focused digital experiences.
             </motion.p>
 
             <p className="mt-2 text-sm text-foreground-secondary">
-                Showcasing clean architecture, reusable components, and performance-first design.
+                Designed with performance, clean architecture, and seamless user intera ction at its
+                core.
             </p>
 
             <p className="mt-1 text-xs text-foreground-secondary">
@@ -36,17 +38,20 @@ export const Hero = (): React.JSX.Element => {
                 <button className="px-6 py-3 bg-primary text-foreground-primary text-heading-md rounded-xl hover:opacity-90 transition">
                     Explore Events
                 </button>
+
                 <button className="px-6 py-3 border border-border text-foreground-primary rounded-xl hover:bg-border transition">
-                    View Source
+                    View Case Study
                 </button>
             </div>
 
             {/* Feature badges */}
             <div className="mt-8 flex flex-wrap justify-center gap-3 text-xs">
-                <span className="px-3 py-1 bg-border rounded-full">Responsive</span>
-                <span className="px-3 py-1 bg-border rounded-full">Dynamic Data</span>
-                <span className="px-3 py-1 bg-border rounded-full">Smooth UI</span>
-                <span className="px-3 py-1 bg-border rounded-full">Optimized</span>
+                <span className="px-3 py-1 bg-border rounded-full">Next.js</span>
+                <span className="px-3 py-1 bg-border rounded-full">React.js</span>
+                <span className="px-3 py-1 bg-border rounded-full">Redux Toolkit</span>
+                <span className="px-3 py-1 bg-border rounded-full">Tailwind CSS</span>
+                <span className="px-3 py-1 bg-border rounded-full">Husky</span>
+                <span className="px-3 py-1 bg-border rounded-full">Optimized UI</span>
             </div>
         </section>
     );
