@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Poppins, Figtree } from 'next/font/google';
-import { LenisScroll } from '@/components';
+import { Footer, LenisScroll, Navbar } from '@/components';
 import Providers from './providers';
 
 const poppins = Poppins({
@@ -71,8 +71,12 @@ const RootLayout = ({
         <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
             <body className={`${poppins.variable} ${figtree.variable} antialiased`}>
                 <Providers>
+                    <Navbar />
                     <LenisScroll />
-                    {children}
+                    <div className="relative">
+                        <div className="relative z-10 bg-background">{children}</div>
+                        <Footer />
+                    </div>
                 </Providers>
             </body>
         </html>

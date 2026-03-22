@@ -1,12 +1,10 @@
-'use client';
-
-import React from 'react';
-import { TestComponent } from '@/components';
+import { FeaturedEvents, Hero } from '@/components';
 
 const Home = (): React.JSX.Element => {
     return (
         <div>
-            <TestComponent />
+            <Hero />
+            <FeaturedEvents />
         </div>
     );
 };

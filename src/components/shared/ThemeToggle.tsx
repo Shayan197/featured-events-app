@@ -24,12 +24,11 @@ export const ThemeToggle = (): React.JSX.Element => {
     };
 
     return (
-        <div onClick={toggleTheme} className="absolute right-9 top-9 cursor-pointer z-10">
+        <div onClick={toggleTheme} className="cursor-pointer z-10">
             <div
                 className={`
                     relative w-14 h-7 rounded-full
-                    transition-all duration-300
-                    ${resolvedTheme === 'dark' ? 'bg-primary-dark' : 'bg-primary-light'}
+                    transition-all duration-300 bg-primary
                 `}
             >
                 {/* Knob */}

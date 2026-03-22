@@ -6,38 +6,51 @@ Design Tokens (Base / Default Theme)
 
 :root {
     /* Brand Colors */
-    --color-primary-dark: #de5e91;
     --color-primary-light: #de5e70;
+    --color-primary-dark: #de5e91;
 
     /* Surface & Text Colors */
-    --color-background: #000000;
-    --color-foreground-primary: #ffffff;
-    --color-foreground-secondary: #aaaaaa;
-    --color-surface-footer: #070708;
+    --color-background-light: #ffffff;
+    --color-background-dark: #000000;
+
+    --color-foreground-primary-light: #333333;
+    --color-foreground-primary-dark: #ffffffe6;
+
+    --color-foreground-secondary-light: #757575;
+    --color-foreground-secondary-dark: #ffffff66;
+
+    --color-border-light: rgba(117, 117, 117, 0.281);
+    --color-border-dark: #ffffff28;
+
+    --color-surface-footer-light: #eeeded;
+    --color-surface-footer-dark: #18181bb9;
+
+    --color-button-light: #ffffff;
+    --color-button-dark: #000000;
 }
 
 /* =========================================
-Dark Theme Override
-========================================= */
-
-[data-theme='dark'] {
-    --color-primary-dark: #de5e91;
-    --color-background: #000000;
-    --color-foreground-primary: #ffffffe6;
-    --color-foreground-secondary: #ffffff66;
-    --color-surface-footer: #070708;
-}
-
-/* =========================================
-Light Theme Override
+Theme Overrides using Data Attribute
 ========================================= */
 
 [data-theme='light'] {
-    --color-primary-light: #de5e70;
-    --color-background: #ffffff;
-    --color-foreground-primary: #333333;
-    --color-foreground-secondary: #757575;
-    --color-surface-footer: #fafafa;
+    --color-primary: var(--color-primary-light);
+    --color-background: var(--color-background-light);
+    --color-foreground-primary: var(--color-foreground-primary-light);
+    --color-foreground-secondary: var(--color-foreground-secondary-light);
+    --color-border: var(--color-border-light);
+    --color-button: var(--color-button-dark);
+    --color-surface-footer: var(--color-surface-footer-light);
+}
+
+[data-theme='dark'] {
+    --color-primary: var(--color-primary-dark);
+    --color-background: var(--color-background-dark);
+    --color-foreground-primary: var(--color-foreground-primary-dark);
+    --color-foreground-secondary: var(--color-foreground-secondary-dark);
+    --color-border: var(--color-border-dark);
+    --color-button: var(--color-button-light);
+    --color-surface-footer: var(--color-surface-footer-dark);
 }
 
 /* =========================================
@@ -45,18 +58,24 @@ Tailwind Token Mapping
 ========================================= */
 
 @theme inline {
-    --color-primary-dark: var(--color-primary-dark);
-    --color-primary-light: var(--color-primary-light);
+    --color-primary: var(--color-primary);
     --color-background: var(--color-background);
     --color-foreground-primary: var(--color-foreground-primary);
     --color-foreground-secondary: var(--color-foreground-secondary);
+    --color-border: var(--color-border);
+    --color-button: var(--color-button);
     --color-surface-footer: var(--color-surface-footer);
 
     /* Typography Scale */
-    --text-heading-xl: 36px;
-    --text-heading-lg: 32px;
-    --text-heading-md: 28px;
-    --text-heading-sm: 24px;
+    --text-heading-6xl: 60px;
+    --text-heading-5xl: 48px;
+    --text-heading-4xl: 40px;
+    --text-heading-3xl: 32px;
+    --text-heading-2xl: 28px;
+    --text-heading-xl: 24px;
+    --text-heading-lg: 20px;
+    --text-heading-md: 18px;
+    --text-heading-sm: 16px;
 
     --text-body-lg: 18px;
     --text-body-md: 16px;
