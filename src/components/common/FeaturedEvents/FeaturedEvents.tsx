@@ -4,11 +4,11 @@ import { events } from './events.data';
 export const FeaturedEvents = (): React.JSX.Element => {
     return (
         <section id="events" className="px-6 py-16">
-            <h2 className="text-3xl font-bold text-center text-foreground-primary">
+            <h2 className="text-heading-xl md:text-heading-2xl font-bold text-center text-foreground-primary">
                 Featured Events
             </h2>
 
-            <p className="text-center mt-2 text-foreground-secondary">
+            <p className="text-center mt-2 text-foreground-secondary text-body-sm md:text-body-md">
                 Handpicked events happening around you — explore and register in seconds.
             </p>
 

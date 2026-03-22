@@ -6,7 +6,7 @@ Design Tokens (Base / Default Theme)
 
 :root {
     /* Brand Colors */
-    --color-primary-light: #de5e70;
+    --color-primary-light: #ff536a;
     --color-primary-dark: #de5e91;
 
     /* Surface & Text Colors */
@@ -99,4 +99,7 @@ Base Styles
 body {
     font-family: var(--font-poppins);
     background-color: var(--color-background);
+}
+html {
+    scroll-behavior: smooth;
 }

@@ -226,8 +226,6 @@ Example:
 
 ## 📸 Screenshots
 
-(Add your screenshots here)
-
 ---
 
 ## Support

@@ -27,7 +27,7 @@ export const ThemeToggle = (): React.JSX.Element => {
         <div onClick={toggleTheme} className="cursor-pointer z-10">
             <div
                 className={`
-                    relative w-14 h-7 rounded-full
+                    relative w-11 h-5 md:w-14 md:h-7 rounded-full
                     transition-all duration-300 bg-primary
                 `}
             >
@@ -35,7 +35,7 @@ export const ThemeToggle = (): React.JSX.Element => {
                 <span
                     className={`
                         absolute top-1 left-1
-                        size-5 rounded-full
+                        size-3 md:size-5 rounded-full
                         bg-foreground-primary
                         transition-all duration-300
                         ${resolvedTheme === 'dark' ? 'translate-x-7' : ''}
