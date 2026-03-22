@@ -17,17 +17,16 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
-    title: 'Next.js Boilerplate',
-    description:
-        'Ready-to-use Next.js boilerplate with TypeScript, Tailwind CSS, and best practices.',
+    title: 'featured-events-app',
+    description: 'featured-events-app with TypeScript, Tailwind CSS, and best practices.',
     icons: {
         icon: 'next.svg',
         shortcut: 'next.svg',
         apple: 'next.svg',
     },
     keywords: [
-        'Boilerplate',
-        'Next.js Boilerplate',
+        'featured-events-app',
+        'Next.js featured-events-app',
         'TypeScript',
         'Husky',
         'React Developer',
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
         'Tailwind CSS',
         'Redux',
         'Redux-toolkit',
-        'Next.js Boilerplate with Tailwind CSS',
+        'Next.js featured-events-app with Tailwind CSS',
         'Best Practices',
         'EsLint',
         'TypeScript',
@@ -45,9 +44,9 @@ export const metadata: Metadata = {
     ],
     authors: [{ name: 'Muhammad Shayan Bukhari', url: 'https://shayanbukhari.vercel.app/' }],
     openGraph: {
-        title: 'Next.js Boilerplate | TypeScript | Redux | Tailwind CSS | Framer Motion | Lennis | Best Practices',
+        title: 'Next.js featured-events-app | TypeScript | Redux | Tailwind CSS | Framer Motion | Lennis | Best Practices',
         description:
-            'Ready to use Next.js boilerplate with TypeScript, Tailwind CSS, Redux Toolkit, and best practices.',
+            'Ready to use Next.js featured-events-app with TypeScript, Tailwind CSS, Redux Toolkit, and best practices.',
         url: 'https://shayanbukhari.vercel.app/',
         siteName: 'Node.js Boilerplate',
         images: [
@@ -55,7 +54,7 @@ export const metadata: Metadata = {
                 url: 'https://shayanbukhari.vercel.app',
                 width: 1200,
                 height: 630,
-                alt: 'Next.js Boilerplate',
+                alt: 'Next.js featured-events-app',
             },
         ],
         locale: 'en_US',
